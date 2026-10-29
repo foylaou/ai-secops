@@ -7,5 +7,8 @@ dist
 components.d.ts
 
 # 論文原文與翻譯（版權考量不公開）
-docs/
+docs/*
+!docs/first/
+docs/first/*
+!docs/first/補充/
 .idea
