@@ -1,0 +1,30 @@
+import { defineMermaidSetup } from '@slidev/types'
+
+export default defineMermaidSetup(() => ({
+  theme: 'base',
+  themeVariables: {
+    darkMode: true,
+    background: 'transparent',
+    fontFamily: '"Noto Sans TC", sans-serif',
+    primaryColor: '#1e293b',
+    primaryTextColor: '#e2e8f0',
+    primaryBorderColor: '#22d3ee',
+    secondaryColor: '#312e81',
+    tertiaryColor: '#0f172a',
+    lineColor: '#94a3b8',
+    textColor: '#e2e8f0',
+    clusterBkg: 'rgba(30,41,59,0.55)',
+    clusterBorder: '#475569',
+    edgeLabelBackground: '#0f172a',
+    noteBkgColor: '#422006',
+    noteTextColor: '#fde68a',
+    noteBorderColor: '#f59e0b',
+    actorBkg: '#1e293b',
+    actorBorder: '#22d3ee',
+    actorTextColor: '#e2e8f0',
+    signalColor: '#cbd5e1',
+    signalTextColor: '#e2e8f0',
+    labelBoxBkgColor: '#1e293b',
+    labelTextColor: '#e2e8f0',
+  },
+}))

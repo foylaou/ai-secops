@@ -45,21 +45,21 @@ const verdict = computed(() => result.value && (result.value.allowed ? '✅ 付�
   <div class="text-sm">
     <div class="flex gap-2 mb-3 items-center">
       <span class="opacity-70">模式：</span>
-      <button class="px-3 py-1 rounded border" :class="!gated ? 'bg-red-500 text-white' : ''" @click="gated = false; result = null">無閘控（只看工具開放）</button>
+      <button class="px-3 py-1 rounded border" :class="!gated ? 'bg-red-500 text-white border-red-400' : ''" @click="gated = false; result = null">無閘控（只看工具開放）</button>
       <button class="px-3 py-1 rounded border" :class="gated ? 'bg-green-600 text-white' : ''" @click="gated = true; result = null">ScopeGate 五階段</button>
     </div>
     <div class="mb-2 opacity-70">使用者授權：只付給 <b>{{ policy.payee }}</b>，單筆上限 <b>{{ policy.ceiling }}</b>。模型送出的呼叫：</div>
     <div class="flex flex-wrap gap-2 mb-3">
       <button v-for="c in calls" :key="c.id" class="px-3 py-1 rounded border" :class="selected.id === c.id ? 'bg-blue-600 text-white' : ''" @click="selected = c; result = null">{{ c.label }}</button>
     </div>
-    <div class="font-mono mb-3 p-2 rounded bg-gray-100">pay(to="{{ selected.payee }}", amount={{ selected.amount }}, key="{{ selected.key }}")</div>
-    <button class="px-4 py-1 rounded bg-black text-white mb-3" @click="run">送出</button>
+    <div class="font-mono mb-3 p-2 rounded bg-white/10">pay(to="{{ selected.payee }}", amount={{ selected.amount }}, key="{{ selected.key }}")</div>
+    <button class="px-4 py-1 rounded bg-cyan-500 text-black font-bold mb-3" @click="run">送出</button>
     <button class="px-3 py-1 ml-2 rounded border mb-3" @click="seen = []; result = null">重置交易紀錄</button>
     <div v-if="result">
       <div v-for="s in result.stages" :key="s.name" class="py-1">
-        <span :class="s.ok ? 'text-green-600' : 'text-red-600'">{{ s.ok ? '✔' : '✘' }}</span> {{ s.name }} <span class="opacity-60">— {{ s.note }}</span>
+        <span :class="s.ok ? 'text-green-400' : 'text-red-400'">{{ s.ok ? '✔' : '✘' }}</span> {{ s.name }} <span class="opacity-60">— {{ s.note }}</span>
       </div>
-      <div class="mt-2 text-lg font-bold" :class="result.allowed && !gated ? 'text-red-600' : ''">{{ verdict }}<span v-if="!gated && selected.id !== 'ok'">（本不該放行！）</span></div>
+      <div class="mt-2 text-lg font-bold" :class="result.allowed && !gated ? 'text-red-400' : ''">{{ verdict }}<span v-if="!gated && selected.id !== 'ok'">（本不該放行！）</span></div>
     </div>
   </div>
 </template>

@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --slidev-theme-primary: #22d3ee;
+  --c-cyan: #22d3ee;
+  --c-violet: #a78bfa;
+  --c-red: #f87171;
+  --c-green: #4ade80;
+  --c-bg: #0b1020;
+}
+
+html, body, .slidev-layout {
+  font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+}
+
+/* 背景：深色漸層 + 網格 */
+.slidev-layout {
+  color: #e2e8f0;
+  background:
+    radial-gradient(900px 500px at 105% -10%, rgba(167, 139, 250, 0.22), transparent 60%),
+    radial-gradient(800px 500px at -10% 110%, rgba(34, 211, 238, 0.16), transparent 60%),
+    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+    var(--c-bg);
+  padding: 2.2rem 3.5rem;
+}
+
+/* 標題：漸層文字 + 左側色條 */
+.slidev-layout h1 {
+  font-weight: 900;
+  font-size: 1.9rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #67e8f9, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.slidev-layout h3 { color: var(--c-cyan); font-weight: 700; }
+.slidev-layout strong { color: #fde68a; font-weight: 700; }
+.slidev-layout a { color: var(--c-cyan); border-bottom: none; }
+.slidev-layout code { background: rgba(148, 163, 184, 0.15); color: #fbcfe8; border-radius: 6px; padding: 0 0.35em; }
+
+/* 清單 */
+.slidev-layout ul > li::marker { color: var(--c-cyan); }
+.slidev-layout ol > li::marker { color: var(--c-violet); font-weight: 700; }
+.slidev-layout li { margin: 0.25em 0; }
+
+/* 表格 */
+.slidev-layout table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 0.82em;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.55);
+}
+.slidev-layout th {
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.22), rgba(167, 139, 250, 0.22));
+  color: #f1f5f9;
+  font-weight: 700;
+  padding: 0.5em 0.8em;
+  border: none;
+}
+.slidev-layout td {
+  padding: 0.45em 0.8em;
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+.slidev-layout tr:nth-child(even) td { background: rgba(148, 163, 184, 0.05); }
+
+/* 引言 */
+.slidev-layout blockquote {
+  border-left: 4px solid var(--c-violet);
+  background: rgba(167, 139, 250, 0.12);
+  border-radius: 0 12px 12px 0;
+  padding: 0.6em 1.1em;
+  color: #e9d5ff;
+  font-style: normal;
+}
+
+/* 攻擊層級徽章 */
+.layer-badge {
+  display: inline-block;
+  padding: 0.25em 0.9em;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fecaca;
+  background: rgba(239, 68, 68, 0.18);
+  border: 1px solid rgba(248, 113, 113, 0.6);
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.25);
+}
+
+/* 卡片 */
+.card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 14px;
+  padding: 0.7em 1em;
+  backdrop-filter: blur(4px);
+}
+.step { border-left: 4px solid; border-radius: 0 10px 10px 0; padding: 0.55em 1em; margin: 0.4em 0; }
+.step.blue { border-color: #60a5fa; background: rgba(96, 165, 250, 0.14); }
+.step.gray { border-color: #94a3b8; background: rgba(148, 163, 184, 0.14); }
+.step.red { border-color: #f87171; background: rgba(248, 113, 113, 0.16); }
+.step.green { border-color: #4ade80; background: rgba(74, 222, 128, 0.14); }
+
+/* 封面與章節頁 */
+.slidev-layout.cover, .slidev-layout.section, .slidev-layout.center {
+  background:
+    radial-gradient(700px 420px at 80% 20%, rgba(167, 139, 250, 0.35), transparent 60%),
+    radial-gradient(700px 420px at 10% 90%, rgba(34, 211, 238, 0.28), transparent 60%),
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px) 0 0 / 40px 40px,
+    var(--c-bg);
+}
+.slidev-layout.cover h1, .slidev-layout.section h1 { font-size: 3.2rem; letter-spacing: 0.02em; }
+.slidev-layout.section { text-align: left; justify-content: center; padding-left: 6rem; }
+.slidev-layout.section h1 { border-left: 8px solid var(--c-cyan); padding-left: 1.2rem; }
+.slidev-layout.section p { color: #94a3b8; font-size: 1.2rem; padding-left: 1.7rem; }
+
+/* 頁碼 */
+.slidev-page-number, .slidev-footer { color: #64748b; }
+
+/* mermaid 置中、微光暈 */
+.mermaid { filter: drop-shadow(0 0 14px rgba(34, 211, 238, 0.12)); }
