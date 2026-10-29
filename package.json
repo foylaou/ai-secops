@@ -1,0 +1,22 @@
+{
+  "name": "ai-secops",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "build:pages": "slidev build --base /ai-secops/",
+    "deploy": "npm run build:pages && gh-pages -d dist --nojekyll"
+  },
+  "dependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.33"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "gh-pages": "^6.3.0"
+  }
+}
